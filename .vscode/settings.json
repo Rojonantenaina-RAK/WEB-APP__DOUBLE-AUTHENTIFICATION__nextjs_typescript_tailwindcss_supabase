@@ -1,0 +1,20 @@
+{
+  // .vscode/settings.json
+
+  // Utiliser Prettier comme formateur par défaut
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Formatage automatique à chaque sauvegarde
+  "editor.formatOnSave": true,
+
+  // Lancer ESLint automatiquement à la sauvegarde
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  // Activer ESLint dans VS Code (utile surtout avec flat config)
+  "eslint.experimental.useFlatConfig": true
+}
