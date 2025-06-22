@@ -1,4 +1,3 @@
-// app/verify/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -26,7 +25,6 @@ export default function VerifyPage() {
       return;
     }
 
-    // Suppression du code utilisé (sécurité)
     await supabase.from('otp_codes').delete().eq('id', data[0].id);
 
     sessionStorage.setItem('2faVerified', 'true');
@@ -34,35 +32,53 @@ export default function VerifyPage() {
   };
 
   return (
-    <form onSubmit={handleVerify} className="p-4 max-w-sm mx-auto space-y-4">
-      <h1 className="text-xl font-bold">Vérification 2FA</h1>
-
-      <input
-        type="email"
-        placeholder="Votre email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        className="w-full border p-2 rounded"
-      />
-
-      <input
-        type="text"
-        placeholder="Code à 6 chiffres"
-        value={code}
-        onChange={(e) => setCode(e.target.value)}
-        required
-        className="w-full border p-2 rounded"
-      />
-
-      {error && <p className="text-red-500">{error}</p>}
-
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded"
+    <div className="flex justify-center items-center min-h-screen bg-white p-6">
+      <form
+        onSubmit={handleVerify}
+        className="w-full max-w-md bg-white border border-gray-200 rounded-2xl shadow p-6"
       >
-        Vérifier
-      </button>
-    </form>
+        <h1 className="text-xl font-bold mb-5 text-center">Vérification 2FA</h1>
+
+        <p className="pb-4 text-center text-sm text-gray-600">
+          Un code à usage unique vous a été envoyé par email. Veuillez entrer
+          votre adresse email et le code reçu.
+        </p>
+
+        <div className="mb-4">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="votre@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full border p-2 rounded bg-gray-100"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="code">Code à 6 chiffres</label>
+          <input
+            type="text"
+            id="code"
+            placeholder="123456"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            required
+            className="w-full border p-2 rounded bg-gray-100"
+          />
+        </div>
+
+        {error && <p className="text-red-500 text-sm">{error}</p>}
+
+        <button
+          type="submit"
+          className="bg-black text-white px-4 py-2 rounded w-full mt-2"
+        >
+          Vérifier
+        </button>
+      </form>
+    </div>
   );
 }

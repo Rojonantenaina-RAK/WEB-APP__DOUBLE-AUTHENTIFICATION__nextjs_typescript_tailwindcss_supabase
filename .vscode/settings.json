@@ -12,7 +12,7 @@
 
   // Lancer ESLint automatiquement à la sauvegarde
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
 
   // Activer ESLint dans VS Code (utile surtout avec flat config)
