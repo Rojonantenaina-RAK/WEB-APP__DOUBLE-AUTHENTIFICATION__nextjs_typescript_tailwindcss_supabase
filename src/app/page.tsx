@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../assets/Logo.jpg';
 import styles from './Landing.module.css';
+import Etudiant from '../assets/Etudiant.png';
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className="flex justify-center h-[70vh] sm:flex-col px-10 md:px-25">
+      <div className="flex justify-center items-center h-[70vh] flex-col sm:flex-row px-10 md:px-25">
         <div className="flex flex-col gap-10 content text-white">
           <p className="font-bold text-3xl">
             Avec{' '}
@@ -56,7 +57,9 @@ export default function Home() {
             Commencer
           </Link>
         </div>
-        <div className="image"></div>
+        <div className="image">
+          <Image src={Etudiant} alt="Image etudiant" width={300} />
+        </div>
       </div>
     </div>
   );
