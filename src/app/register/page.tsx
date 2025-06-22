@@ -35,7 +35,7 @@ export default function RegisterPage() {
         <form onSubmit={handleRegister} className="max-w-100 w-full">
           <p className="text-xl font-bold my-5">Créer un compte</p>
           <p className="pb-5">
-            Rejoins-nous dès aujourd'hui. <br />
+            Rejoins-nous dès aujourd&rsquo;hui. <br />
             Inscris-toi pour accéder aux cours.
           </p>
 

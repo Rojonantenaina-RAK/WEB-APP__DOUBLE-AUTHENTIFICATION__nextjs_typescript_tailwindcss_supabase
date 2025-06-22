@@ -52,8 +52,8 @@ export default function LoginPage() {
         <form onSubmit={handleLogin} className="max-w-100">
           <p className="text-xl font-bold my-5">Bienvenue !</p>
           <p className="pb-5">
-            Aujourd'hui est un nouveau jour. C'est ton jour. C'est toi qui le
-            façonnes. <br />
+            Aujourd&rsquo;hui est un nouveau jour. C&rsquo;est ton jour.
+            C&rsquo;est toi qui le façonnes. <br />
             Connecte-toi pour commencer.
           </p>
 
@@ -96,8 +96,9 @@ export default function LoginPage() {
           <br />
           <hr className="text-gray-200" />
           <br />
+
           <p>
-            Vous n'avez pas encore de compte ?{' '}
+            Vous n&rsquo;avez pas encore de compte ?{' '}
             <Link href="/register" className="text-blue-600 hover:underline">
               Créer un compte
             </Link>
